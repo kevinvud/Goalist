@@ -17,10 +17,12 @@ class GoalVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var goals: [Goal] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -87,8 +89,23 @@ extension GoalVC: UITableViewDelegate, UITableViewDataSource{
             self.fetchCoreDataObjects()
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
+        
+        let addAction = UITableViewRowAction(style: .normal, title: "ADD ONE") { (rowAction, indexPath) in
+            self.setProgress(atIndexPath: indexPath)
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+        
         deleteAction.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
-        return [deleteAction]
+        addAction.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+        
+        // if goal is completed, no need to show ADD ONE button
+        let goal = goals[indexPath.row]
+        
+        if goal.goalProgress == goal.goalCompletionValue{
+            return [deleteAction]
+        }else{
+           return [deleteAction, addAction]
+        }
     }
 }
 
@@ -119,12 +136,29 @@ extension GoalVC{
             debugPrint("Could not fetch: \(error.localizedDescription)")
             completion(false)
         }
+
+    }
+    
+    func setProgress(atIndexPath indexPath: IndexPath){
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         
+        let chosenGoal = goals[indexPath.row]
+        if chosenGoal.goalProgress < chosenGoal.goalCompletionValue{
+            chosenGoal.goalProgress = chosenGoal.goalProgress + 1
+        }else{
+            return
+        }
+        
+        do{
+            try managedContext.save()
+            print("Set progress done")
+        }catch{
+            debugPrint("Could not set progress")
+        }
         
         
     }
-    
-    
+
 }
 
 

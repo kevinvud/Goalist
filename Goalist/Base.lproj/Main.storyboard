@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
             <string>AvenirNext-Bold</string>
+            <string>AvenirNext-Heavy</string>
             <string>AvenirNext-Medium</string>
             <string>AvenirNext-Regular</string>
         </array>
@@ -82,9 +83,10 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="owg-Pe-W5a">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="owg-Pe-W5a">
                                 <rect key="frame" x="0.0" y="78" width="414" height="658"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="goalCell" rowHeight="70" id="0gf-2s-fuy" customClass="GoalCell" customModule="Goalist" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
@@ -147,6 +149,22 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39V-ur-zyt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOAL COMPLETE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Irt-MD-aXT">
+                                                            <rect key="frame" x="76.333333333333314" y="15" width="262.33333333333337" height="41"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.59999999999999998" green="0.84313725490196079" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Irt-MD-aXT" firstAttribute="centerY" secondItem="39V-ur-zyt" secondAttribute="centerY" id="21h-TO-64D"/>
+                                                        <constraint firstItem="Irt-MD-aXT" firstAttribute="centerX" secondItem="39V-ur-zyt" secondAttribute="centerX" id="aUq-3l-5Ml"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RUQ-vf-EqZ" firstAttribute="top" secondItem="lZu-Iy-bda" secondAttribute="top" constant="8" id="Ad2-QY-04Y"/>
@@ -154,11 +172,16 @@
                                                 <constraint firstAttribute="bottom" secondItem="RUQ-vf-EqZ" secondAttribute="bottom" constant="8" id="M6R-G8-N2U"/>
                                                 <constraint firstItem="8wk-xP-jbN" firstAttribute="top" secondItem="lZu-Iy-bda" secondAttribute="topMargin" constant="3" id="OBI-QK-aQ9"/>
                                                 <constraint firstItem="8wk-xP-jbN" firstAttribute="leading" secondItem="lZu-Iy-bda" secondAttribute="leadingMargin" constant="8" id="aaa-Qe-gkf"/>
+                                                <constraint firstItem="39V-ur-zyt" firstAttribute="leading" secondItem="lZu-Iy-bda" secondAttribute="leading" id="dZp-pd-Tor"/>
+                                                <constraint firstAttribute="trailing" secondItem="39V-ur-zyt" secondAttribute="trailing" id="gj4-0r-nuC"/>
+                                                <constraint firstItem="39V-ur-zyt" firstAttribute="top" secondItem="lZu-Iy-bda" secondAttribute="top" id="gvH-dk-pYv"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="8wk-xP-jbN" secondAttribute="bottom" constant="3" id="l16-md-vph"/>
                                                 <constraint firstAttribute="trailing" secondItem="RUQ-vf-EqZ" secondAttribute="trailing" constant="8" id="mcX-hm-nw6"/>
+                                                <constraint firstAttribute="bottom" secondItem="39V-ur-zyt" secondAttribute="bottom" id="tbK-MN-55Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completionVIew" destination="39V-ur-zyt" id="hct-9f-Gfm"/>
                                             <outlet property="goalDescriptionLabel" destination="Sce-3b-hbh" id="WIZ-Yl-5wd"/>
                                             <outlet property="goalProgessLabel" destination="RUQ-vf-EqZ" id="8hO-af-6O6"/>
                                             <outlet property="goalTypeLabel" destination="4J4-w8-fik" id="EHS-Tj-fKK"/>
@@ -388,13 +411,16 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7mf-HB-fRn">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7mf-HB-fRn">
                                         <rect key="frame" x="0.0" y="35" width="374" height="80"/>
                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="55"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="115" id="G2i-RU-zqP"/>
+                                </constraints>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQ7-31-Hgg">
                                 <rect key="frame" x="0.0" y="221" width="414" height="515"/>

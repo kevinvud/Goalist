@@ -41,8 +41,8 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
         
     }
     @IBAction func backButtonPressed(_ sender: Any) {
-        dismissDetail()
-        //dismiss(animated: true, completion: nil)
+        //dismissDetail()
+        dismiss(animated: true, completion: nil)
     }
     
     func save(completion: (_ finished: Bool) -> ()) {
