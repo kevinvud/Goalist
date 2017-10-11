@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalVC: UIViewController {
     
@@ -16,6 +17,7 @@ class GoalVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
     }
 
