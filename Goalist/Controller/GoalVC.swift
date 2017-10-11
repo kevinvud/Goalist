@@ -17,6 +17,8 @@ class GoalVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         
 
     }
@@ -26,3 +28,29 @@ class GoalVC: UIViewController {
     
 }
 
+extension GoalVC: UITableViewDelegate, UITableViewDataSource{
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "goalCell", for: indexPath) as? GoalCell{
+            cell.configureCell(description: "Eat salad twice a weeak.", type: .shortTerm, goalProgressAmount: 2)
+            return cell
+        }else{
+            return UITableViewCell()
+        }
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
+    
+    
+    
+}
