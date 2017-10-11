@@ -19,6 +19,7 @@
 		D12EA6251F8DE4DC00E9AED2 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12EA6241F8DE4DC00E9AED2 /* UIViewControllerExt.swift */; };
 		D1B96E071F8DEAF2002B8A7D /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B96E061F8DEAF2002B8A7D /* UIViewExt.swift */; };
 		D1B96E091F8DED18002B8A7D /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B96E081F8DED18002B8A7D /* UIButtonExt.swift */; };
+		D1B96E0B1F8DF262002B8A7D /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B96E0A1F8DF262002B8A7D /* FinishGoalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D12EA6241F8DE4DC00E9AED2 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		D1B96E061F8DEAF2002B8A7D /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		D1B96E081F8DED18002B8A7D /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
+		D1B96E0A1F8DF262002B8A7D /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			children = (
 				D12EA6071F8D071D00E9AED2 /* GoalVC.swift */,
 				D12EA6221F8DDB0400E9AED2 /* CreateGoalVC.swift */,
+				D1B96E0A1F8DF262002B8A7D /* FinishGoalVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				D12EA6061F8D071D00E9AED2 /* AppDelegate.swift in Sources */,
 				D12EA6251F8DE4DC00E9AED2 /* UIViewControllerExt.swift in Sources */,
 				D1B96E091F8DED18002B8A7D /* UIButtonExt.swift in Sources */,
+				D1B96E0B1F8DF262002B8A7D /* FinishGoalVC.swift in Sources */,
 				D12EA60E1F8D071D00E9AED2 /* Goalist.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
