@@ -25,15 +25,22 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         nextButton.bindToKeyboard()
-        shortTermButton.setSelectedColor()
-        longTermButton.setDeselectedColor()
+        shortTermButton.setGradientBackground(colorOne: Colors.colorOne, colorTwo: Colors.colorTwo)
+        longTermButton.setGradientBackground(colorOne: Colors.colorThree, colorTwo: Colors.colorFour)
         goalTextView.delegate = self
+        nextButton.setGradientBackground(colorOne: Colors.colorOne, colorTwo: Colors.colorTwo)
+        nextButton.clipsToBounds = true
+        longTermButton.clipsToBounds = true
+        shortTermButton.clipsToBounds = true
 
+        
     }
     
 
+
     @IBAction func shortTermPressed(_ sender: Any) {
         goalType = .shortTerm
+
         shortTermButton.setSelectedColor()
         longTermButton.setDeselectedColor()
     }
@@ -41,6 +48,7 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
 
     @IBAction func longTermPressed(_ sender: Any) {
         goalType = .longTerm
+
         shortTermButton.setDeselectedColor()
         longTermButton.setSelectedColor()
         
@@ -50,8 +58,8 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
         if goalTextView.text != "" && goalTextView.text != "What is your goal?"{
             guard let finishGoalVC = storyboard?.instantiateViewController(withIdentifier: "FinishGoalVC") as? FinishGoalVC else{return}
             finishGoalVC.initData(description: goalTextView.text!, type: goalType)
-            presentingViewController?.presentSecondaryDetail(finishGoalVC)
-            
+//            presentingViewController?.presentSecondaryDetail(finishGoalVC)
+            presentDetail(finishGoalVC)
         }
         
         
@@ -62,7 +70,14 @@ class CreateGoalVC: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        goalTextView.text = ""
+        if goalTextView.text == "What is your goal?"{
+            goalTextView.text = ""
+        }
         goalTextView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
+    
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        self.view.endEditing(true)
+//    }
 }
+

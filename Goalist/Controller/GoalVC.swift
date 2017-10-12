@@ -31,6 +31,8 @@ class GoalVC: UIViewController {
         tableView.reloadData()
     }
     
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
+    
     func fetchCoreDataObjects(){
         
         self.fetch { (complete) in

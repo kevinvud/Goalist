@@ -10,11 +10,15 @@ import UIKit
 
 extension UIButton{
     func setSelectedColor(){
-        self.backgroundColor = #colorLiteral(red: 0.3254901961, green: 0.4196078431, blue: 0.7764705882, alpha: 1)
+        layer.sublayers?.remove(at: 0)
+        self.setGradientBackground(colorOne: Colors.colorOne, colorTwo: Colors.colorTwo)
+
     }
     
     func setDeselectedColor(){
-        self.backgroundColor = #colorLiteral(red: 0.3254901961, green: 0.4196078431, blue: 0.7764705882, alpha: 0.7837649829)
+        layer.sublayers?.remove(at: 0)
+       self.setGradientBackground(colorOne: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1), colorTwo: #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1))
     }
     
 }
+

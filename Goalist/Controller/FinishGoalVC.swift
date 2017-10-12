@@ -28,21 +28,25 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         createGoalButton.bindToKeyboard()
         pointTextField.delegate = self
+        createGoalButton.setGradientBackground(colorOne: Colors.colorOne, colorTwo: Colors.colorTwo)
+        
+        
     }
         
     @IBAction func createGoalButtonPressed(_ sender: Any) {
         if pointTextField.text != ""{
             self.save { (complete) in
                 if complete{
-                    dismiss(animated: true, completion: nil)
+                    performSegue(withIdentifier: "unwindToVC1", sender: self)
                 }
             }
         }
         
     }
     @IBAction func backButtonPressed(_ sender: Any) {
-        //dismissDetail()
-        dismiss(animated: true, completion: nil)
+        
+        dismissDetail()
+
     }
     
     func save(completion: (_ finished: Bool) -> ()) {
@@ -62,12 +66,14 @@ class FinishGoalVC: UIViewController, UITextFieldDelegate {
             debugPrint("Could not save: \(error.localizedDescription)")
             completion(false)
         }
-      
-        
-        
-        
+
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.placeholder = nil
     }
     
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
     
 }

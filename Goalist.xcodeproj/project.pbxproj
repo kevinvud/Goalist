@@ -20,6 +20,10 @@
 		D1B96E071F8DEAF2002B8A7D /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B96E061F8DEAF2002B8A7D /* UIViewExt.swift */; };
 		D1B96E091F8DED18002B8A7D /* UIButtonExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B96E081F8DED18002B8A7D /* UIButtonExt.swift */; };
 		D1B96E0B1F8DF262002B8A7D /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B96E0A1F8DF262002B8A7D /* FinishGoalVC.swift */; };
+		D1F620A61F8F62C800AC98D7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F620A51F8F62C800AC98D7 /* GradientView.swift */; };
+		D1F620AA1F8F76C900AC98D7 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F620A91F8F76C900AC98D7 /* Gradient.swift */; };
+		D1F620AC1F8F7CE100AC98D7 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F620AB1F8F7CE100AC98D7 /* RoundedButton.swift */; };
+		D1F620AF1F8F7F9500AC98D7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1F620AE1F8F7F9500AC98D7 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		D1B96E061F8DEAF2002B8A7D /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		D1B96E081F8DED18002B8A7D /* UIButtonExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExt.swift; sourceTree = "<group>"; };
 		D1B96E0A1F8DF262002B8A7D /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
+		D1F620A51F8F62C800AC98D7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D1F620A91F8F76C900AC98D7 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		D1F620AB1F8F7CE100AC98D7 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		D1F620AE1F8F7F9500AC98D7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +78,7 @@
 		D12EA6041F8D071D00E9AED2 /* Goalist */ = {
 			isa = PBXGroup;
 			children = (
+				D1F620AD1F8F7F8800AC98D7 /* Constant */,
 				D12EA61C1F8D0F4D00E9AED2 /* Extensions */,
 				D12EA61B1F8D0F3900E9AED2 /* Enum */,
 				D12EA61D1F8D0F5B00E9AED2 /* Controller */,
@@ -88,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				D12EA61E1F8DC26B00E9AED2 /* GoalCell.swift */,
+				D1F620A51F8F62C800AC98D7 /* GradientView.swift */,
+				D1F620AB1F8F7CE100AC98D7 /* RoundedButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,6 +117,7 @@
 				D12EA6241F8DE4DC00E9AED2 /* UIViewControllerExt.swift */,
 				D1B96E061F8DEAF2002B8A7D /* UIViewExt.swift */,
 				D1B96E081F8DED18002B8A7D /* UIButtonExt.swift */,
+				D1F620A91F8F76C900AC98D7 /* Gradient.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -118,6 +130,14 @@
 				D1B96E0A1F8DF262002B8A7D /* FinishGoalVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D1F620AD1F8F7F8800AC98D7 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				D1F620AE1F8F7F9500AC98D7 /* Color.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,14 +214,18 @@
 			files = (
 				D12EA61F1F8DC26B00E9AED2 /* GoalCell.swift in Sources */,
 				D12EA6231F8DDB0400E9AED2 /* CreateGoalVC.swift in Sources */,
+				D1F620A61F8F62C800AC98D7 /* GradientView.swift in Sources */,
 				D12EA6211F8DD4E300E9AED2 /* GoalType.swift in Sources */,
 				D12EA6081F8D071D00E9AED2 /* GoalVC.swift in Sources */,
 				D1B96E071F8DEAF2002B8A7D /* UIViewExt.swift in Sources */,
 				D12EA6061F8D071D00E9AED2 /* AppDelegate.swift in Sources */,
 				D12EA6251F8DE4DC00E9AED2 /* UIViewControllerExt.swift in Sources */,
 				D1B96E091F8DED18002B8A7D /* UIButtonExt.swift in Sources */,
+				D1F620AF1F8F7F9500AC98D7 /* Color.swift in Sources */,
 				D1B96E0B1F8DF262002B8A7D /* FinishGoalVC.swift in Sources */,
+				D1F620AA1F8F76C900AC98D7 /* Gradient.swift in Sources */,
 				D12EA60E1F8D071D00E9AED2 /* Goalist.xcdatamodeld in Sources */,
+				D1F620AC1F8F7CE100AC98D7 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
